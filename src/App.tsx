@@ -5,12 +5,13 @@ import {MainLazy} from "./pages/main/Main.lazy";
 import {AboutLazy} from "./pages/about/About.lazy";
 import {Theme, ThemeContext} from "./theme/ThemeContext";
 import {useTheme} from "./theme/useTheme";
+import {classNames} from "./helpers/classNames/classNames";
 
 
 export const App = React.memo(() => {
     const {theme, toggleTheme} = useTheme() // кастомный хук
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames("app", {}, [theme])}>
             <button onClick={toggleTheme}>Toggle theme</button>
             {/*<Counter/>*/}
             <Link to={"/"}>На главную</Link>
