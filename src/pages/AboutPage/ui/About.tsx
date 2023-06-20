@@ -3,7 +3,7 @@ import React from 'react';
 const About =React.memo(() => {
  return (
         <div>
-            About
+            About AboutAboutAbout
         </div>
     );
 });
