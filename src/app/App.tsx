@@ -1,22 +1,21 @@
-import React, {Suspense} from 'react';
-import {Link, Route, Routes} from 'react-router-dom';
+import React from 'react';
 import "./styles/index.scss"
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
-import {AboutPage} from "pages/AboutPage";
-import {MainPage} from "pages/MainPage";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Nawbar";
+import {Sidebar} from "widgets/Sidebar";
 
 
 export const App = React.memo(() => {
-    const {theme, toggleTheme} = useTheme() // кастомный хук
+    const {theme} = useTheme() // кастомный хук
     return (
         <div className={classNames("app", {}, [theme])}>
             <Navbar/>
-            <button onClick={toggleTheme}>Toggle theme</button>
-
-            <AppRouter/>
+            <div className="content-page">
+                <Sidebar/>
+                <AppRouter/>
+            </div>
 
         </div>
     );
