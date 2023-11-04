@@ -1,9 +1,12 @@
 import React from 'react';
+import {useTranslation} from "react-i18next";
 
-const About =React.memo(() => {
- return (
+const About = React.memo(() => {
+    const {t, i18n} = useTranslation("about");
+
+    return (
         <div>
-            About AboutAboutAbout
+            {t("О сайте")}
         </div>
     );
 });
