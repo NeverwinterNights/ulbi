@@ -1,14 +1,10 @@
-import React from 'react';
-import {useTranslation} from "react-i18next";
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const About = React.memo(() => {
-    const {t, i18n} = useTranslation("about");
+  const { i18n, t } = useTranslation('about')
 
-    return (
-        <div>
-            {t("О сайте")}
-        </div>
-    );
-});
+  return <div>{t('О сайте')}</div>
+})
 
 export default About

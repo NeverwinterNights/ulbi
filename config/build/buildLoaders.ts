@@ -1,5 +1,6 @@
-import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack from "webpack";
+
 import {BuildOptions} from "./types/config";
 
 export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
@@ -39,9 +40,9 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
     }
 
     const typesScriptLoader = {
+        exclude: /node_modules/,
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
     };
 
     return [
