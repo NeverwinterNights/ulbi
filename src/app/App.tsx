@@ -15,7 +15,6 @@ export const App = React.memo(() => {
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback={''}>
         <Navbar />
-
         <div className={'content-page'}>
           <Sidebar />
           <AppRouter />

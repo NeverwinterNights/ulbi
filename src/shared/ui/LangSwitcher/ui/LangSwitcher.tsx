@@ -5,8 +5,6 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Button } from 'shared/ui/Button'
 import { ThemeButton } from 'shared/ui/Button/ui/Button'
 
-import styles from './LangSwitcher.module.scss'
-
 type LangSwitcherPropsType = {
   className?: string
 }
@@ -20,7 +18,7 @@ export const LangSwitcher = React.memo(({ className }: LangSwitcherPropsType) =>
 
   return (
     <Button
-      className={classNames(styles.langSwitcher, {}, [className])}
+      className={classNames('', {}, [className])}
       onClick={toggleLang}
       theme={ThemeButton.CLEAR}
     >

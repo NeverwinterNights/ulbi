@@ -10,6 +10,18 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
         use: ['@svgr/webpack'],
     }
 
+    const babelLoader = {
+        exclude: /node_modules/,
+        test: /\.(js|jsx|tsx)$/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env']
+            }
+        }
+    }
+
+
     const cssLoaders = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -46,7 +58,7 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
     };
 
     return [
-        typesScriptLoader, cssLoaders, svgLoader, fileLoader
+        babelLoader, typesScriptLoader, cssLoaders, svgLoader, fileLoader,
     ]
 }
 

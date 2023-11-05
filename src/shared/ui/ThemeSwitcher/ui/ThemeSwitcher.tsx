@@ -7,8 +7,6 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Button } from 'shared/ui/Button'
 import { ThemeButton } from 'shared/ui/Button/ui/Button'
 
-import styles from './ThemeSwitcher.module.scss'
-
 type ThemeSwitcherPropsType = {
   className?: string
 }
@@ -18,7 +16,7 @@ export const ThemeSwitcher = React.memo(({ className }: ThemeSwitcherPropsType) 
 
   return (
     <Button
-      className={classNames(styles.themeSwitcher, {}, [className])}
+      className={classNames('', {}, [className])}
       onClick={toggleTheme}
       theme={ThemeButton.CLEAR}
     >
