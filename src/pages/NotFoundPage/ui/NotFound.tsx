@@ -10,7 +10,7 @@ type NotFoundPropsType = {
 }
 
 const NotFound = React.memo(({ className }: NotFoundPropsType) => {
-  const { i18n, t } = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <div className={classNames(styles.notfound, {}, [className])}>{t('Страница не найдена')}</div>
